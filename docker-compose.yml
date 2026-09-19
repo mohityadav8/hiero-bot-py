@@ -10,7 +10,7 @@ services:
       - .env
     environment:
       - DATABASE_URL=postgresql+asyncpg://hiero:hieropass@db:5432/hiero_db
-      - ENVIRONMENT=development
+      - ENVIRONMENT=${ENVIRONMENT:-production}
       - LOG_LEVEL=info
     depends_on:
       db:
